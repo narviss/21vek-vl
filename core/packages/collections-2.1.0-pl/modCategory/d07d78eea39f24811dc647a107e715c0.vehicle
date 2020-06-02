@@ -1,0 +1,54 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => false,
+  'namespace' => 'collections',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"collections-2.1.0-pl\\/modCategory\\/d07d78eea39f24811dc647a107e715c0.resolve.switchback.resolver","type":"php","name":"resolve.switchback"}',
+    ),
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"collections-2.1.0-pl\\/modCategory\\/d07d78eea39f24811dc647a107e715c0\\/1\\/","target":"return MODX_ASSETS_PATH . \'components\\/\';","name":"collections"}',
+    ),
+    2 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"collections-2.1.0-pl\\/modCategory\\/d07d78eea39f24811dc647a107e715c0\\/2\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"collections"}',
+    ),
+    3 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"collections-2.1.0-pl\\/modCategory\\/d07d78eea39f24811dc647a107e715c0.resolve.tables.resolver","type":"php","name":"resolve.tables"}',
+    ),
+    4 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"collections-2.1.0-pl\\/modCategory\\/d07d78eea39f24811dc647a107e715c0.resolve.extension_package.resolver","type":"php","name":"resolve.extension_package"}',
+    ),
+    5 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"collections-2.1.0-pl\\/modCategory\\/d07d78eea39f24811dc647a107e715c0.resolve.defaulttemplate.resolver","type":"php","name":"resolve.defaulttemplate"}',
+    ),
+    6 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"collections-2.1.0-pl\\/modCategory\\/d07d78eea39f24811dc647a107e715c0.resolve.updatefromfirst.resolver","type":"php","name":"resolve.updatefromfirst"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '3899583b4ae627636139611ec11e986b',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => 'd07d78eea39f24811dc647a107e715c0',
+  'native_key' => 1,
+  'object' => '{"id":1,"parent":0,"category":"Collections"}',
+);

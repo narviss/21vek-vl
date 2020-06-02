@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'ckeditor',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '12189995111adf2d0aec77f24ee588aa',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'bb8f4b16196bdc8d43bd585cb3fd563b',
+  'native_key' => 'ckeditor.toolbar',
+  'object' => '{"key":"ckeditor.toolbar","value":"[\\r\\n    { \\"name\\": \\"clipboard\\", \\"groups\\": [ \\"clipboard\\", \\"undo\\" ], \\"items\\": [ \\"Cut\\", \\"Copy\\", \\"Paste\\", \\"PasteText\\", \\"PasteFromWord\\", \\"-\\", \\"Undo\\", \\"Redo\\" ] },\\r\\n    { \\"name\\": \\"links\\", \\"items\\": [ \\"Link\\", \\"Unlink\\"] },\\r\\n    { \\"name\\": \\"insert\\", \\"items\\": [ \\"Image\\", \\"Youtube\\", \\"Flash\\", \\"Table\\", \\"HorizontalRule\\", \\"SpecialChar\\", \\"Iframe\\" ] },\\r\\n    { \\"name\\": \\"editing\\", \\"items\\": [ \\"Find\\", \\"Replace\\" ] },\\r\\n    { \\"name\\": \\"tools\\", \\"items\\": [ \\"Maximize\\", \\"ShowBlocks\\" ] },\\r\\n    { \\"name\\": \\"document\\", \\"groups\\": [ \\"mode\\" ], \\"items\\": [ \\"Source\\"] },\\r\\n    \\"\\/\\",\\r\\n    { \\"name\\": \\"basicstyles\\", \\"groups\\": [ \\"basicstyles\\", \\"cleanup\\" ], \\"items\\": [ \\"Bold\\", \\"Italic\\", \\"Subscript\\", \\"Superscript\\", \\"-\\", \\"RemoveFormat\\" ] },\\r\\n    { \\"name\\": \\"paragraph\\", \\"groups\\": [ \\"list\\", \\"indent\\", \\"blocks\\", \\"align\\" ], \\"items\\": [ \\"NumberedList\\", \\"BulletedList\\", \\"-\\", \\"Outdent\\", \\"Indent\\", \\"-\\", \\"Blockquote\\", \\"CreateDiv\\", \\"-\\", \\"JustifyLeft\\", \\"JustifyCenter\\", \\"JustifyRight\\", \\"JustifyBlock\\" ] },\\r\\n    { \\"name\\": \\"styles\\", \\"items\\": [ \\"Styles\\", \\"Format\\"] }\\r\\n]","xtype":"textarea","namespace":"ckeditor","area":"general","editedon":null}',
+);

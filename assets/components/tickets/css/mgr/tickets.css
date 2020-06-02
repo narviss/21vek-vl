@@ -1,0 +1,132 @@
+.icon-ticketssection .x-tree-node-icon {
+	background-image: url(../../img/tickets_section.png) !important;
+}
+
+.tickets-comment-row.comment-unpublished div, .tickets-thread-row.thread-closed div {
+	color: #AAA;
+	font-style: italic !important;
+}
+.tickets-comment-row.comment-deleted div, .tickets-thread-row.thread-deleted div {
+	color: brown !important;
+	text-decoration: line-through !important;
+}
+
+.tickets-comment-row .resource-link, .tickets-thread-row .resource-link {
+	color: #005580;
+	text-decoration: none;
+}
+.tickets-comment-row .resource-link:hover, .tickets-thread-row .resource-link:hover {
+	text-decoration: underline;
+}
+
+
+
+
+.tickets-grid-date {
+	color:#a0a0a0;
+	font-family:arial, Helvetica, sans-serif;
+	font-size:20px;
+	font-weight:bold;
+	letter-spacing:-1px;
+	line-height:1;
+	padding-right:10px;
+	text-align:right;
+	margin-top: -4px;
+}
+.tickets-grid-date .tickets-grid-time {
+	display:block;
+	font-size:10px;
+	font-weight:normal;
+	margin-top:5px;
+}
+
+.tickets-grid-comments {
+	background: url(../../img/comments-icon.png) top left no-repeat !important;
+	height: 22px;
+	width: 24px;
+	padding: 3px 0 0 3px;
+	text-align: center;
+}
+.tickets-grid-comments span {
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 1.3em;
+	display: inline-block;
+	color: white;
+	text-align: center;
+}
+.tickets-comments-col-header {
+	margin-left:7px;
+}
+.main-column a {
+	color:#485319;
+	line-height:1;
+	text-decoration:none;
+}
+.main-column a:hover {
+	color:#7a8f23;
+	text-decoration:none;
+}
+.tickets-grid .x-grid3-cell-inner {
+	color:#808080;
+}
+
+
+.tickets-panel-spacer .x-panel-body { background: transparent !important; }
+
+.actions a {
+	border-radius:3px;
+	background:#dcdcdc;
+	background:linear-gradient(center bottom,#dcdcdc 0%,#fcfcfc 100%);
+	text-shadow:0 1px 0 #ffffff;
+	border:1px solid #cccccc;
+	color:#888888;
+	display:block;
+	font-size:11px;
+	font-weight:bold;
+	font-family:helvetica, arial, freesans, clean, sans-serif;
+	padding:6px 8px;
+	text-decoration:none;
+	cursor:pointer;
+}
+.actions a:hover {
+	background:#e0e0e0;
+	background:linear-gradient(center bottom,#e0e0e0 0%,#fcfcfc 100%);
+	color:#5b7a98;
+}
+.actions a:active {
+	box-shadow:0 0 3px #aaaaaa inset;
+	background-color:#ffffff;
+	background-image:none;
+}
+
+.actions a.delete:hover {
+	color:brown;
+	text-shadow:0 1px 0 #fff;
+}
+.actions a.unpublish:hover {
+	color:darkgoldenrod;
+	text-shadow:0 1px 0 #fff;
+}
+
+.tickets-grid .ticket-id {
+	font-size: 11px;
+	font-weight: normal;
+	display: block;
+	margin-bottom: 3px;
+	padding-left: 5px;
+	float: left;
+	color: #aaa;
+}
+.tickets-grid .main-column a {
+	float: left;
+}
+.tickets-grid .ticket-title-column ul {
+	clear: both;
+}
+
+.tickets-list-item {
+	padding: 5px;
+}
+
+.tickets-list-item .parents {display:block;}

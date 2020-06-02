@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'ckeditor',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '4b456ff3bff9186ce9f11b1a2e9bd113',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '94198de250b03387aaaf04d080410f30',
+  'native_key' => 'ckeditor.extra_plugins',
+  'object' => '{"key":"ckeditor.extra_plugins","value":"","xtype":"textfield","namespace":"ckeditor","area":"general","editedon":null}',
+);

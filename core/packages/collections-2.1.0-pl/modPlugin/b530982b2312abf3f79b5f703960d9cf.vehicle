@@ -1,0 +1,130 @@
+<?php return array (
+  'unique_key' => 'name',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'PluginEvents' => 
+    array (
+      '29458bf293458f6f96d8dce15120b6dc' => 
+      array (
+        'preserve_keys' => true,
+        'update_object' => false,
+        'unique_key' => 
+        array (
+          0 => 'pluginid',
+          1 => 'event',
+        ),
+        'class' => 'modPluginEvent',
+        'object' => '{"pluginid":0,"event":"OnBeforeDocFormSave","priority":0,"propertyset":0}',
+        'guid' => '6824ff3409de75f2afe3029e03caead4',
+        'native_key' => 
+        array (
+          0 => 0,
+          1 => 'OnBeforeDocFormSave',
+        ),
+        'signature' => '3f941cc0f7679e0d7e2e7ed8e58049fa',
+      ),
+      'fafbfc17f6ebee997b21b867eee58e76' => 
+      array (
+        'preserve_keys' => true,
+        'update_object' => false,
+        'unique_key' => 
+        array (
+          0 => 'pluginid',
+          1 => 'event',
+        ),
+        'class' => 'modPluginEvent',
+        'object' => '{"pluginid":0,"event":"OnResourceBeforeSort","priority":0,"propertyset":0}',
+        'guid' => '864da4c5714a6ec135a4a10a3d4ac96e',
+        'native_key' => 
+        array (
+          0 => 0,
+          1 => 'OnResourceBeforeSort',
+        ),
+        'signature' => 'f0d752d6c3309f87f8d92e61327fec13',
+      ),
+      '709266bf47f4d2091c30eeabe16c016c' => 
+      array (
+        'preserve_keys' => true,
+        'update_object' => false,
+        'unique_key' => 
+        array (
+          0 => 'pluginid',
+          1 => 'event',
+        ),
+        'class' => 'modPluginEvent',
+        'object' => '{"pluginid":0,"event":"OnDocFormPrerender","priority":0,"propertyset":0}',
+        'guid' => 'f12ffbcf381543748d61141da896c3e0',
+        'native_key' => 
+        array (
+          0 => 0,
+          1 => 'OnDocFormPrerender',
+        ),
+        'signature' => '4cd9d5ba907a56151230e95d93a4fc6f',
+      ),
+      '62002d579e7091944ff892210ed074d8' => 
+      array (
+        'preserve_keys' => true,
+        'update_object' => false,
+        'unique_key' => 
+        array (
+          0 => 'pluginid',
+          1 => 'event',
+        ),
+        'class' => 'modPluginEvent',
+        'object' => '{"pluginid":0,"event":"OnBeforeEmptyTrash","priority":0,"propertyset":0}',
+        'guid' => '55f03b6bb504dd4f883305236f502f19',
+        'native_key' => 
+        array (
+          0 => 0,
+          1 => 'OnBeforeEmptyTrash',
+        ),
+        'signature' => 'ba925bae61e8d1989735640af064f8eb',
+      ),
+      '0f5cfe979cc04a481f6c151e25fae296' => 
+      array (
+        'preserve_keys' => true,
+        'update_object' => false,
+        'unique_key' => 
+        array (
+          0 => 'pluginid',
+          1 => 'event',
+        ),
+        'class' => 'modPluginEvent',
+        'object' => '{"pluginid":0,"event":"OnManagerPageInit","priority":0,"propertyset":0}',
+        'guid' => 'eb619c4304e4e74541c20ea2255b2dbe',
+        'native_key' => 
+        array (
+          0 => 0,
+          1 => 'OnManagerPageInit',
+        ),
+        'signature' => 'bc48773620d7fcc3359a6e4ba7f00821',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'PluginEvents' => 
+    array (
+      'preserve_keys' => true,
+      'update_object' => false,
+      'unique_key' => 
+      array (
+        0 => 'pluginid',
+        1 => 'event',
+      ),
+    ),
+  ),
+  'namespace' => 'collections',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '9f412290417d9679094e46778078fef5',
+  'package' => 'modx',
+  'class' => 'modPlugin',
+  'signature' => 'b530982b2312abf3f79b5f703960d9cf',
+  'native_key' => 1,
+  'object' => '{"id":1,"source":0,"property_preprocess":0,"name":"Collections","description":"This plugin handles correct setting of show_in_tree parameter. It also inject JS to handle close button in Resource panel.","editor_type":0,"category":0,"cache_type":0,"plugincode":"\\/**\\n * Collections\\n *\\n * DESCRIPTION\\n *\\n * This plugin inject JS to handle proper working of close buttons in Resource\'s panel (OnDocFormPrerender)\\n * This plugin handles setting proper show_in_tree parameter (OnBeforeDocFormSave, OnResourceSort)\\n *\\n *\\/\\n$corePath = $modx->getOption(\'collections.core_path\', null, $modx->getOption(\'core_path\', null, MODX_CORE_PATH) . \'components\\/collections\\/\');\\n\\/** @var Collections $collections *\\/\\n$collections = $modx->getService(\\n    \'collections\',\\n    \'Collections\',\\n    $corePath . \'model\\/collections\\/\',\\n    array(\\n        \'core_path\' => $corePath\\n    )\\n);\\n\\n$eventName = $modx->event->name;\\nswitch($eventName) {\\n    case \'OnManagerPageInit\':\\n        $cssFile = $collections->getOption(\'assets_url\').\'css\\/mgr.css\';\\n        $modx->regClientCSS($cssFile);\\n        break;\\n    case \'OnDocFormPrerender\':\\n        $inject = false;\\n\\n        \\/** @var modResource $parent *\\/\\n        $parent = $resource->Parent;\\n        if (!$parent) {\\n            if (isset($_GET[\'parent\'])) {\\n                $parent = intval($_GET[\'parent\']);\\n\\n                $parent = $modx->getObject(\'modResource\', $parent);\\n                if ($parent){\\n                    $inject = ($parent->class_key == \'CollectionContainer\');\\n                }\\n            }\\n        } else {\\n            $inject = ($parent->class_key == \'CollectionContainer\');\\n        }\\n\\n        if ($inject) {\\n            $jsurl = $collections->config[\'jsUrl\'].\'mgr\\/\';\\n            $modx->regClientStartupScript($jsurl.\'extra\\/hijackclose.js\');\\n        }\\n\\n        break;\\n\\n    case \'OnBeforeDocFormSave\':\\n        \\/** @var modResource $parent *\\/\\n        $parent = $resource->Parent;\\n        if ($parent) {\\n            if ($parent->class_key == \'CollectionContainer\') {\\n                $hasChildren = ($resource->hasChildren() != 0);\\n                if ($hasChildren) {\\n                    $resource->set(\'show_in_tree\', 1);\\n                } else {\\n                    $resource->set(\'show_in_tree\', 0);\\n                }\\n            }\\n        }\\n\\n        if ($resource->class_key == \'CollectionContainer\') {\\n            $resource->set(\'show_in_tree\', 1);\\n        }\\n\\n        \\/** @var modResource $original *\\/\\n        $original = $modx->getObject(\'modResource\', $resource->id);\\n        if ($original) {\\n\\n            \\/** @var modResource $originalParent *\\/\\n            $originalParent = $original->Parent;\\n            if ($originalParent && (!$parent || ($originalParent->id != $parent->id))) {\\n                if ($originalParent->class_key == \'CollectionContainer\') {\\n                    if ($parent->class_key != \'CollectionContainer\') {\\n                        $resource->set(\'show_in_tree\', 1);\\n                    }\\n                } else {\\n                    \\/** @var modResource $originalGreatParent *\\/\\n                    $originalGreatParent = $originalParent->Parent;\\n                    if ($originalGreatParent && ($originalGreatParent->class_key == \'CollectionContainer\')) {\\n                        $resource->set(\'show_in_tree\', 1);\\n\\n                        $originalParentHasOtherChildren = ($originalParent->hasChildren() > 1);\\n                        if (!$originalParentHasOtherChildren) {\\n                            $originalParent->set(\'show_in_tree\', 0);\\n                            $originalParent->save();\\n                        }\\n                    }\\n                }\\n            }\\n\\n            \\/\\/ Switch Resource type\\n            if ($original->class_key != $resource->class_key) {\\n                \\/\\/ Switch to CollectionContainer\\n                if (($original->class_key != \'CollectionContainer\') && ($resource->class_key == \'CollectionContainer\')) {\\n                    $children = $resource->Children;\\n                    \\/** @var modResource $child *\\/\\n                    foreach ($children as $child) {\\n                        $child->set(\'show_in_tree\', 0);\\n\\n                        if ($child->class_key == \'CollectionContainer\') {\\n                            $child->set(\'show_in_tree\', 1);\\n                        }\\n\\n                        if ($child->hasChildren() > 0) {\\n                            $child->set(\'show_in_tree\', 1);\\n                        }\\n\\n                        $child->save();\\n                    }\\n                }\\n\\n                \\/\\/ Switch from CollectionContainer\\n                if (($original->class_key == \'CollectionContainer\') && ($resource->class_key != \'CollectionContainer\')) {\\n                    $children = $resource->Children;\\n                    \\/** @var modResource $child *\\/\\n                    foreach ($children as $child) {\\n                        $child->set(\'show_in_tree\', 1);\\n                        $child->save();\\n                    }\\n                }\\n            }\\n        }\\n\\n        break;\\n\\n    case \'OnResourceBeforeSort\':\\n        foreach ($nodes as $node) {\\n            \\/** @var modResource $resource *\\/\\n            $resource = $modx->getObject(\'modResource\', $node[\'id\']);\\n            if ($resource) {\\n                $hasChildren = ($resource->hasChildren() != 0);\\n\\n                \\/** @var modResource $originalParent *\\/\\n                $originalParent = $resource->Parent;\\n\\n                \\/** @var modResource $parent *\\/\\n                $parent = $modx->getObject(\'modResource\', $node[\'parent\']);\\n\\n                if (($parent && $originalParent && $parent->id == $originalParent->id) || (!$parent && !$originalParent)) {\\n                    continue;\\n                }\\n\\n                if ($parent) {\\n                    if ($parent->class_key == \'CollectionContainer\') {\\n                        if ($hasChildren == false) {\\n                            $resource->set(\'show_in_tree\', 0);\\n                        } else {\\n                            $resource->set(\'show_in_tree\', 1);\\n                        }\\n                    } else {\\n                        \\/** @var modResource $greatParent *\\/\\n                        $greatParent = $parent->Parent;\\n                        if ($greatParent && ($greatParent->class_key == \'CollectionContainer\')) {\\n                            $parent->set(\'show_in_tree\', 1);\\n                            $parent->save();\\n                        }\\n\\n                        if (($originalParent->class_key == \'CollectionContainer\') && ($parent->class_key != \'CollectionContainer\')) {\\n                            $resource->set(\'show_in_tree\', 1);\\n                        }\\n\\n                    }\\n                } else {\\n                    if ($originalParent && ($originalParent->class_key == \'CollectionContainer\')) {\\n                        $resource->set(\'show_in_tree\', 1);\\n                    }\\n                }\\n\\n                if ($originalParent) {\\n                    \\/** @var modResource $originalGreatParent *\\/\\n                    $originalGreatParent = $originalParent->Parent;\\n                    if ($originalGreatParent && ($originalGreatParent->class_key == \'CollectionContainer\')) {\\n                        $originalParentHasOtherChildren = ($originalParent->hasChildren() > 1);\\n                        if (!$originalParentHasOtherChildren) {\\n                            $originalParent->set(\'show_in_tree\', 0);\\n                            $originalParent->save();\\n                        }\\n                    }\\n                }\\n\\n                if ($resource->class_key == \'CollectionContainer\') {\\n                    $resource->set(\'show_in_tree\', 1);\\n                }\\n\\n                $resource->save();\\n            }\\n\\n        }\\n\\n        break;\\n\\n    case \'OnBeforeEmptyTrash\':\\n        foreach ($ids as $id) {\\n            \\/** @var modResource $resource *\\/\\n            $resource = $modx->getObject(\'modResource\', $id);\\n            if ($resource) {\\n                \\/** @var modResource $parent *\\/\\n                $parent = $resource->Parent;\\n                if ($parent) {\\n                    \\/** @var modResource $grandParent *\\/\\n                    $grandParent = $parent->Parent;\\n                    if ($grandParent) {\\n                        if ($grandParent->class_key == \'CollectionContainer\') {\\n                            $parentHasOtherChildren = ($parent->hasChildren() > 1);\\n                            if ($parentHasOtherChildren == false) {\\n                                $parent->set(\'show_in_tree\', 0);\\n                                $parent->save();\\n                            }\\n                        }\\n                    }\\n                }\\n            }\\n        }\\n        break;\\n}\\n\\nreturn;","locked":0,"properties":null,"disabled":0,"moduleguid":"","static":0,"static_file":"","content":"\\/**\\n * Collections\\n *\\n * DESCRIPTION\\n *\\n * This plugin inject JS to handle proper working of close buttons in Resource\'s panel (OnDocFormPrerender)\\n * This plugin handles setting proper show_in_tree parameter (OnBeforeDocFormSave, OnResourceSort)\\n *\\n *\\/\\n$corePath = $modx->getOption(\'collections.core_path\', null, $modx->getOption(\'core_path\', null, MODX_CORE_PATH) . \'components\\/collections\\/\');\\n\\/** @var Collections $collections *\\/\\n$collections = $modx->getService(\\n    \'collections\',\\n    \'Collections\',\\n    $corePath . \'model\\/collections\\/\',\\n    array(\\n        \'core_path\' => $corePath\\n    )\\n);\\n\\n$eventName = $modx->event->name;\\nswitch($eventName) {\\n    case \'OnManagerPageInit\':\\n        $cssFile = $collections->getOption(\'assets_url\').\'css\\/mgr.css\';\\n        $modx->regClientCSS($cssFile);\\n        break;\\n    case \'OnDocFormPrerender\':\\n        $inject = false;\\n\\n        \\/** @var modResource $parent *\\/\\n        $parent = $resource->Parent;\\n        if (!$parent) {\\n            if (isset($_GET[\'parent\'])) {\\n                $parent = intval($_GET[\'parent\']);\\n\\n                $parent = $modx->getObject(\'modResource\', $parent);\\n                if ($parent){\\n                    $inject = ($parent->class_key == \'CollectionContainer\');\\n                }\\n            }\\n        } else {\\n            $inject = ($parent->class_key == \'CollectionContainer\');\\n        }\\n\\n        if ($inject) {\\n            $jsurl = $collections->config[\'jsUrl\'].\'mgr\\/\';\\n            $modx->regClientStartupScript($jsurl.\'extra\\/hijackclose.js\');\\n        }\\n\\n        break;\\n\\n    case \'OnBeforeDocFormSave\':\\n        \\/** @var modResource $parent *\\/\\n        $parent = $resource->Parent;\\n        if ($parent) {\\n            if ($parent->class_key == \'CollectionContainer\') {\\n                $hasChildren = ($resource->hasChildren() != 0);\\n                if ($hasChildren) {\\n                    $resource->set(\'show_in_tree\', 1);\\n                } else {\\n                    $resource->set(\'show_in_tree\', 0);\\n                }\\n            }\\n        }\\n\\n        if ($resource->class_key == \'CollectionContainer\') {\\n            $resource->set(\'show_in_tree\', 1);\\n        }\\n\\n        \\/** @var modResource $original *\\/\\n        $original = $modx->getObject(\'modResource\', $resource->id);\\n        if ($original) {\\n\\n            \\/** @var modResource $originalParent *\\/\\n            $originalParent = $original->Parent;\\n            if ($originalParent && (!$parent || ($originalParent->id != $parent->id))) {\\n                if ($originalParent->class_key == \'CollectionContainer\') {\\n                    if ($parent->class_key != \'CollectionContainer\') {\\n                        $resource->set(\'show_in_tree\', 1);\\n                    }\\n                } else {\\n                    \\/** @var modResource $originalGreatParent *\\/\\n                    $originalGreatParent = $originalParent->Parent;\\n                    if ($originalGreatParent && ($originalGreatParent->class_key == \'CollectionContainer\')) {\\n                        $resource->set(\'show_in_tree\', 1);\\n\\n                        $originalParentHasOtherChildren = ($originalParent->hasChildren() > 1);\\n                        if (!$originalParentHasOtherChildren) {\\n                            $originalParent->set(\'show_in_tree\', 0);\\n                            $originalParent->save();\\n                        }\\n                    }\\n                }\\n            }\\n\\n            \\/\\/ Switch Resource type\\n            if ($original->class_key != $resource->class_key) {\\n                \\/\\/ Switch to CollectionContainer\\n                if (($original->class_key != \'CollectionContainer\') && ($resource->class_key == \'CollectionContainer\')) {\\n                    $children = $resource->Children;\\n                    \\/** @var modResource $child *\\/\\n                    foreach ($children as $child) {\\n                        $child->set(\'show_in_tree\', 0);\\n\\n                        if ($child->class_key == \'CollectionContainer\') {\\n                            $child->set(\'show_in_tree\', 1);\\n                        }\\n\\n                        if ($child->hasChildren() > 0) {\\n                            $child->set(\'show_in_tree\', 1);\\n                        }\\n\\n                        $child->save();\\n                    }\\n                }\\n\\n                \\/\\/ Switch from CollectionContainer\\n                if (($original->class_key == \'CollectionContainer\') && ($resource->class_key != \'CollectionContainer\')) {\\n                    $children = $resource->Children;\\n                    \\/** @var modResource $child *\\/\\n                    foreach ($children as $child) {\\n                        $child->set(\'show_in_tree\', 1);\\n                        $child->save();\\n                    }\\n                }\\n            }\\n        }\\n\\n        break;\\n\\n    case \'OnResourceBeforeSort\':\\n        foreach ($nodes as $node) {\\n            \\/** @var modResource $resource *\\/\\n            $resource = $modx->getObject(\'modResource\', $node[\'id\']);\\n            if ($resource) {\\n                $hasChildren = ($resource->hasChildren() != 0);\\n\\n                \\/** @var modResource $originalParent *\\/\\n                $originalParent = $resource->Parent;\\n\\n                \\/** @var modResource $parent *\\/\\n                $parent = $modx->getObject(\'modResource\', $node[\'parent\']);\\n\\n                if (($parent && $originalParent && $parent->id == $originalParent->id) || (!$parent && !$originalParent)) {\\n                    continue;\\n                }\\n\\n                if ($parent) {\\n                    if ($parent->class_key == \'CollectionContainer\') {\\n                        if ($hasChildren == false) {\\n                            $resource->set(\'show_in_tree\', 0);\\n                        } else {\\n                            $resource->set(\'show_in_tree\', 1);\\n                        }\\n                    } else {\\n                        \\/** @var modResource $greatParent *\\/\\n                        $greatParent = $parent->Parent;\\n                        if ($greatParent && ($greatParent->class_key == \'CollectionContainer\')) {\\n                            $parent->set(\'show_in_tree\', 1);\\n                            $parent->save();\\n                        }\\n\\n                        if (($originalParent->class_key == \'CollectionContainer\') && ($parent->class_key != \'CollectionContainer\')) {\\n                            $resource->set(\'show_in_tree\', 1);\\n                        }\\n\\n                    }\\n                } else {\\n                    if ($originalParent && ($originalParent->class_key == \'CollectionContainer\')) {\\n                        $resource->set(\'show_in_tree\', 1);\\n                    }\\n                }\\n\\n                if ($originalParent) {\\n                    \\/** @var modResource $originalGreatParent *\\/\\n                    $originalGreatParent = $originalParent->Parent;\\n                    if ($originalGreatParent && ($originalGreatParent->class_key == \'CollectionContainer\')) {\\n                        $originalParentHasOtherChildren = ($originalParent->hasChildren() > 1);\\n                        if (!$originalParentHasOtherChildren) {\\n                            $originalParent->set(\'show_in_tree\', 0);\\n                            $originalParent->save();\\n                        }\\n                    }\\n                }\\n\\n                if ($resource->class_key == \'CollectionContainer\') {\\n                    $resource->set(\'show_in_tree\', 1);\\n                }\\n\\n                $resource->save();\\n            }\\n\\n        }\\n\\n        break;\\n\\n    case \'OnBeforeEmptyTrash\':\\n        foreach ($ids as $id) {\\n            \\/** @var modResource $resource *\\/\\n            $resource = $modx->getObject(\'modResource\', $id);\\n            if ($resource) {\\n                \\/** @var modResource $parent *\\/\\n                $parent = $resource->Parent;\\n                if ($parent) {\\n                    \\/** @var modResource $grandParent *\\/\\n                    $grandParent = $parent->Parent;\\n                    if ($grandParent) {\\n                        if ($grandParent->class_key == \'CollectionContainer\') {\\n                            $parentHasOtherChildren = ($parent->hasChildren() > 1);\\n                            if ($parentHasOtherChildren == false) {\\n                                $parent->set(\'show_in_tree\', 0);\\n                                $parent->save();\\n                            }\\n                        }\\n                    }\\n                }\\n            }\\n        }\\n        break;\\n}\\n\\nreturn;"}',
+);

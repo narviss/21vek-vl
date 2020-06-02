@@ -1,0 +1,19 @@
+<?php return array (
+  'preserve_keys' => false,
+  'unique_key' => 
+  array (
+    0 => 'name',
+  ),
+  'update_object' => true,
+  'namespace' => 'tickets',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '90e953f76fd1b10d6e6422eb3dd85998',
+  'package' => 'modx',
+  'class' => 'modAccessPolicy',
+  'signature' => 'e6b1aa8329ef5ecaa09d2b28732e2557',
+  'native_key' => NULL,
+  'object' => '{"id":null,"name":"TicketUserPolicy","description":"A policy for create and update Tickets.","parent":0,"template":0,"class":"","data":"{\\"ticket_delete\\":true,\\"ticket_publish\\":true,\\"ticket_save\\":true,\\"ticket_vote\\":true,\\"ticket_star\\":true,\\"comment_save\\":true,\\"comment_vote\\":true,\\"comment_star\\":true,\\"ticket_file_upload\\":true,\\"ticket_file_delete\\":true}","lexicon":"tickets:permissions"}',
+);
